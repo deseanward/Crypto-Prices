@@ -9,7 +9,7 @@ const Price = () => {
   const params = useParams()
   const symbol = params.symbol
   // Using the other two variables to create our URL
-  const url = `http://rest.coinapi.io/v1/exchangerate/${symbol}/USD?apikey=${apiKey}`;
+  const url = `https://rest.coinapi.io/v1/exchangerate/${symbol}/USD?apikey=${apiKey}`;
 
   //state to hold the coin data
   const [coin, setCoin] = useState("null");

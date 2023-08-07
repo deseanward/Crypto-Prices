@@ -1,18 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './nav.styles.css'
+import { NavContainer } from './nav.styles.jsx';
 
 const Nav = () => {
-    return (
-        <div className="nav">
-        <Link to='/'>
-        <div>CRYPTO PRICES</div>
-            </Link> 
+	return (
+		<NavContainer className='nav'>
+			<Link to='/'>
+				<div>CRYPTO PRICES</div>
+			</Link>
 
-        <Link to='/currencies'><div>CURRENCIES</div></Link>    
-        </div>
-    )
-}
+			<Link to='/currencies'>
+				<div>CURRENCIES</div>
+			</Link>
+		</NavContainer>
+	);
+};
 
-export default Nav
+export default Nav;

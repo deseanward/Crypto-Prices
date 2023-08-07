@@ -1,34 +1,35 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { CurrenciesContainer, CurrenciesContent } from './currencies.styles';
 
-const Currencies = (props) => {
-  const currencies = [
-    { name: "Bitcoin", symbol: "BTC" },
-    { name: "Litecoin", symbol: "LTC" },
-    { name: "Ethereum", symbol: "ETH" },
-    { name: "Ethereum Classic", symbol: "ETC" },
-    { name: "Stellar Lumens", symbol: "XLM" },
-    { name: "Dash", symbol: "DASH" },
-    { name: "Ripple", symbol: "XRP" },
-    { name: "Zcash", symbol: "ZEC" },
-  ];
+const Currencies = props => {
+	const currencies = [
+		{ name: 'Bitcoin', symbol: 'BTC' },
+		{ name: 'Litecoin', symbol: 'LTC' },
+		{ name: 'Ethereum', symbol: 'ETH' },
+		{ name: 'Ethereum Classic', symbol: 'ETC' },
+		{ name: 'Stellar Lumens', symbol: 'XLM' },
+		{ name: 'Dash', symbol: 'DASH' },
+		{ name: 'Ripple', symbol: 'XRP' },
+		{ name: 'Zcash', symbol: 'ZEC' },
+	];
 
-  return (
-    
-    <div className="currencies">
-      <h1>This is the Currencies Component</h1>
-      
-      {currencies.map((coin) => {
-        const { name, symbol } = coin;
+	return (
+		<CurrenciesContainer>
+			<h1>Latest Moving Currencies</h1>
+			<CurrenciesContent>
+				{currencies.map(coin => {
+					const { name, symbol } = coin;
 
-        return (
-          <Link to={`/price/${symbol}`}>
-            <h2>{name}</h2>
-          </Link>
-        );
-      })}
-    </div>
-  )
-}
+					return (
+						<Link to={`/price/${symbol}`}>
+							<h2>{name}</h2>
+						</Link>
+					);
+				})}
+			</CurrenciesContent>
+		</CurrenciesContainer>
+	);
+};
 
-export default Currencies
+export default Currencies;
